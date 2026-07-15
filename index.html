@@ -3,103 +3,392 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Telefonjour för företag — svar dygnet runt utan jourpersonal (2026)</title>
-<meta name="description" content="Telefonjour utan nattpersonal: så låter ditt företag en AI-receptionist svara på samtal kvällar, nätter och helger — boka tider, ta akutärenden och skicka sammanfattningar.">
+<title>Telefonjour företag — svar dygnet runt, utan jourpersonal (2026)</title>
+<meta name="description" content="Telefonjour företag utan nattbemanning: en AI-receptionist svarar dygnet runt, bedömer akut eller rutin, bokar tider och larmar vid akuta ärenden. Fast pris från 795 kr/mån.">
 <link rel="canonical" href="https://telefonjour.se/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Telefonjour företag — svar dygnet runt, utan jourpersonal">
+<meta property="og:description" content="AI-receptionist tar er telefonjour: svarar dygnet runt, bedömer akut kontra rutin, bokar och larmar. Fast pris från 795 kr/mån, 0 kr startavgift.">
+<meta property="og:image" content="https://telefonjour.se/og-image.png">
+<!-- MOCKUP: og-image.png 1200x630 — ersätt med riktig social-delning-bild vid behov -->
+<meta property="og:url" content="https://telefonjour.se/">
+<meta property="og:locale" content="sv_SE">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Vad är en telefonjour?","acceptedAnswer":{"@type":"Answer","text":"En telefonjour ser till att företagets telefon besvaras även utanför ordinarie öppettider — kvällar, nätter och helger. Traditionellt bemannas jouren av egen personal eller en jourcentral. Numera kan en AI-receptionist ta jouren: den svarar direkt, bedömer ärendet, bokar tider och larmar dig bara när det verkligen behövs."}},
 {"@type":"Question","name":"Vad kostar en telefonjour?","acceptedAnswer":{"@type":"Answer","text":"Bemannad jour är dyr — jourtillägg för egen personal eller avtal med jourcentral som ofta prissätts per samtal och nattimme. En AI-baserad telefonjour kostar vanligen en fast månadsavgift från några hundra kronor och blir inte dyrare för att kunden ringer klockan tre på natten. Uppskattningar per juli 2026."}},
-{"@type":"Question","name":"Kan en AI-jour hantera akuta ärenden?","acceptedAnswer":{"@type":"Answer","text":"Ja, med rätt uppsättning: AI:n svarar, avgör om ärendet är akut enligt dina regler, och kan då koppla samtalet vidare till jourhavande eller skicka SMS-larm direkt — medan rutinärenden bokas till nästa dag."}}
+{"@type":"Question","name":"Kan en AI-jour hantera akuta ärenden?","acceptedAnswer":{"@type":"Answer","text":"Ja, med rätt uppsättning: AI:n svarar, avgör om ärendet är akut enligt dina regler, och kan då koppla samtalet vidare till jourhavande eller skicka SMS-larm direkt — medan rutinärenden bokas till nästa dag."}},
+{"@type":"Question","name":"Hur snabbt kan telefonjouren sättas upp?","acceptedAnswer":{"@type":"Answer","text":"Telefonjouren kopplas in via vidarekoppling av ert befintliga nummer, aldrig genom att portera det, och är i drift på minuter."}},
+{"@type":"Question","name":"Vad händer om AI:n inte kan hantera ett ärende?","acceptedAnswer":{"@type":"Answer","text":"AI:n följer era uppsatta regler. Kan den inte hjälpa kunden fullt ut eskalerar den till en människa enligt era anvisningar — via vidarekoppling eller larm."}},
+{"@type":"Question","name":"Vad skiljer telefonjour från en vanlig svarsservice?","acceptedAnswer":{"@type":"Answer","text":"En svarsservice tar ofta bara emot samtal under avtalad tid och lämnar ett meddelande, till en löpande kostnad på cirka 15–35 kr per samtal plus abonnemang (uppskattning per juli 2026). En AI-baserad telefonjour svarar dygnet runt till fast pris utan kostnad per samtal, bokar i kalendern, skickar SMS-bekräftelse och kan eskalera akuta ärenden direkt — och inga samtal används för att träna AI-modeller."}}
 ]}
 </script>
 <style>
-:root{--bg:#0d1220;--panel:#141b2e;--ink:#e8ecf6;--ink2:#94a0b8;--amber:#f59e0b;--amber2:#fbbf24;--line:#243050}
+:root{--bg:#0d1220;--panel:#141b2e;--panel2:#171f36;--ink:#e8ecf6;--ink2:#94a0b8;--amber:#f59e0b;--amber2:#fbbf24;--line:#243050;--red:#ef4444;--shadow:0 20px 50px -20px rgba(0,0,0,.55)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--line)}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-weight:800;font-size:18px;color:var(--amber)}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+img,svg{display:block}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(13,18,32,.72);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:16px}
+.logo{font-weight:800;font-size:18px;color:var(--amber);white-space:nowrap}
 .logo span{color:var(--ink)}
-.pill{font-size:13px;color:var(--ink2)}
-.hero{padding:70px 0 44px}
+.navlinks{display:flex;align-items:center;gap:28px}
+.navlinks a{font-size:14.5px;color:var(--ink2);text-decoration:none;transition:color .15s}
+.navlinks a:hover{color:var(--ink)}
+.navcta{background:var(--amber);color:#131108;padding:10px 18px;border-radius:9px;font-weight:800;font-size:14px;text-decoration:none;transition:background .15s,transform .15s;white-space:nowrap}
+.navcta:hover{background:var(--amber2);transform:translateY(-1px)}
+@media(max-width:640px){.navlinks a:not(.navcta){display:none}}
+
+/* hero */
+.hero{padding:76px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:52px 0 40px}}
 .kicker{color:var(--amber);font-weight:700;font-size:13.5px;letter-spacing:1.5px;text-transform:uppercase}
-h1{font-size:clamp(30px,5.5vw,46px);line-height:1.1;letter-spacing:-.8px;margin-top:14px;max-width:680px}
-.hero p{margin-top:18px;font-size:18px;color:var(--ink2);max-width:620px}
-.hcta{display:inline-block;margin-top:26px;background:var(--amber);color:#131108;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:800}
-.hcta:hover{background:var(--amber2)}
-.clock{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px}
-.tc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
-.tc .t{font-size:13px;color:var(--amber);font-weight:700;letter-spacing:1px}
-.tc h3{font-size:17px;margin:8px 0 6px}
+h1{font-size:clamp(34px,5.5vw,56px);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin-top:16px}
+.hero p.lead{margin-top:20px;font-size:18px;color:var(--ink2);max-width:560px}
+.ctarow{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hcta{display:inline-block;background:var(--amber);color:#131108;padding:15px 28px;border-radius:11px;text-decoration:none;font-weight:800;transition:background .15s,transform .15s;box-shadow:var(--shadow)}
+.hcta:hover{background:var(--amber2);transform:translateY(-2px)}
+.scta{display:inline-flex;align-items:center;gap:8px;padding:15px 22px;border-radius:11px;text-decoration:none;font-weight:700;color:var(--ink);border:1px solid var(--line);transition:border-color .15s,background .15s}
+.scta:hover{border-color:var(--amber);background:rgba(245,158,11,.06)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{font-size:13px;font-weight:650;color:var(--ink2);border:1px solid var(--line);padding:7px 13px;border-radius:100px;display:flex;align-items:center;gap:7px}
+.chip svg{width:13px;height:13px;stroke:var(--amber)}
+
+.heroart{position:relative;border-radius:18px;background:linear-gradient(155deg,#182144,#101527 60%);border:1px solid var(--line);padding:22px;box-shadow:var(--shadow);min-height:340px}
+.heroart .phonebar{display:flex;justify-content:space-between;font-size:12px;color:var(--ink2);margin-bottom:14px}
+.sms{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.sms .top{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink2);margin-bottom:6px}
+.sms .badge{background:rgba(239,68,68,.14);color:var(--red);border:1px solid rgba(239,68,68,.4);font-size:10.5px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:100px}
+.sms p{font-size:14px;color:var(--ink)}
+/* MOCKUP: hero-sms-larm.png 480x600 — ersätt heroart-blocket med riktig skärmdump vid behov */
+
+/* sections */
+section{padding:0}
+h2{font-size:clamp(24px,3.2vw,32px);letter-spacing:-.02em;font-weight:800;margin-bottom:12px}
+.sectionhead{max-width:640px;margin-bottom:34px}
+.sub{color:var(--ink2);font-size:16px}
+.band{padding:88px 0}
+.band.alt{background:var(--panel)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* problem */
+.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+@media(max-width:768px){.problem-grid{grid-template-columns:1fr}}
+.pcard{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:26px}
+.pcard p{color:var(--ink2);font-size:15.5px}
+.pcard .src{margin-top:10px;font-size:12.5px;color:#6a7594}
+
+/* clock/feature grid */
+.clock{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.tc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;transition:border-color .15s,transform .15s}
+.tc:hover{border-color:var(--amber);transform:translateY(-3px)}
+.tc .icowrap{width:38px;height:38px;border-radius:10px;background:rgba(245,158,11,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.tc .icowrap svg{width:19px;height:19px;stroke:var(--amber);fill:none}
+.tc .t{font-size:13px;color:var(--amber);font-weight:700;letter-spacing:1px;display:flex;align-items:center;gap:8px}
+.tc .akut{background:rgba(239,68,68,.14);color:var(--red);border:1px solid rgba(239,68,68,.4);font-size:10px;font-weight:800;padding:2px 7px;border-radius:100px;letter-spacing:.5px}
+.tc h3{font-size:17.5px;margin:8px 0 6px;font-weight:700}
 .tc p{font-size:14.5px;color:var(--ink2)}
-h2{font-size:26px;letter-spacing:-.4px;margin:60px 0 12px}
-.sub{color:var(--ink2);margin-bottom:22px}
-.vs{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow-x:auto}
-table{width:100%;border-collapse:collapse;min-width:560px}
-th,td{padding:13px 16px;text-align:left;font-size:15px;border-bottom:1px solid var(--line)}
-th{color:var(--amber);font-size:12.5px;text-transform:uppercase;letter-spacing:.6px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+@media(max-width:768px){.steps{grid-template-columns:1fr}}
+.step{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative}
+.step .num{font-size:34px;font-weight:800;color:var(--amber);opacity:.9}
+.step h3{font-size:18px;margin:10px 0 8px}
+.step p{color:var(--ink2);font-size:14.5px}
+.stepmock{margin-top:20px;border:1px dashed var(--line);border-radius:10px;padding:16px;font-size:12px;color:#5f6a88;background:rgba(255,255,255,.02)}
+/* MOCKUP: steg2-dashboard.png 400x300 — ersätt stepmock-blocket i steg 2 med riktig skärmdump */
+
+/* compare table */
+.vs{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow-x:auto;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;min-width:600px}
+th,td{padding:15px 18px;text-align:left;font-size:15px;border-bottom:1px solid var(--line)}
+th{color:var(--ink2);font-size:12.5px;text-transform:uppercase;letter-spacing:.6px;font-weight:700}
 tr:last-child td{border-bottom:none}
 td{color:var(--ink2)} td b{color:var(--ink)}
-details{background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:16px 20px}
-summary{cursor:pointer;font-weight:650;color:var(--ink)}
-details p{margin-top:10px;color:var(--ink2);font-size:15px}
-.cta{margin:64px 0;background:linear-gradient(160deg,#1b2440,#141b2e);border:1px solid var(--amber);border-radius:16px;padding:40px;text-align:center}
-.cta h2{margin:0 0 10px}
-.cta p{color:var(--ink2);max-width:540px;margin:0 auto 24px}
-.btn{display:inline-block;background:var(--amber);color:#131108;padding:14px 28px;border-radius:10px;text-decoration:none;font-weight:800}
-footer{border-top:1px solid var(--line);padding:26px 0 44px;font-size:13.5px;color:var(--ink2)}
-footer a{color:var(--amber)}
-.note{font-size:13px;color:var(--ink2);margin-top:12px}
+th.hl,td.hl{background:rgba(245,158,11,.08);border-left:1px solid rgba(245,158,11,.5);border-right:1px solid rgba(245,158,11,.5)}
+th.hl{color:var(--amber)}
+tr:last-child td.hl{border-radius:0 0 0 0}
+.note{font-size:13.5px;color:var(--ink2);margin-top:16px;max-width:720px}
+
+/* stats band */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:24px}
+.stat .num{font-size:clamp(28px,3.4vw,38px);font-weight:800;color:var(--amber);letter-spacing:-.02em}
+.stat .lbl{font-size:14px;color:var(--ink);margin:6px 0 10px;font-weight:650}
+.stat .src{font-size:12px;color:#6a7594}
+
+/* industry cards */
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:860px){.ind-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.ind-grid{grid-template-columns:1fr}}
+.ind{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.ind:hover{border-color:var(--amber);transform:translateY(-3px)}
+.ind .icowrap{width:38px;height:38px;border-radius:10px;background:rgba(245,158,11,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.ind .icowrap svg{width:19px;height:19px;stroke:var(--amber);fill:none}
+.ind h3{font-size:16.5px;margin-bottom:6px}
+.ind p{font-size:14px;color:var(--ink2)}
+
+/* faq */
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:18px 22px;transition:border-color .15s}
+.faq details[open]{border-color:var(--amber)}
+.faq summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .chev{width:11px;height:11px;border-right:2px solid var(--ink2);border-bottom:2px solid var(--ink2);transform:rotate(-45deg);transition:transform .2s;flex-shrink:0}
+.faq details[open] summary .chev{transform:rotate(45deg);border-color:var(--amber)}
+.faq details p{margin-top:14px;color:var(--ink2);font-size:15px}
+
+/* final cta */
+.cta{margin:0;background:linear-gradient(160deg,#1b2440,#141b2e);border:1px solid var(--amber);border-radius:18px;padding:52px 40px;text-align:center;box-shadow:var(--shadow)}
+.cta h2{margin:0 0 12px}
+.cta p{color:var(--ink2);max-width:560px;margin:0 auto 26px}
+.btn{display:inline-block;background:var(--amber);color:#131108;padding:15px 30px;border-radius:11px;text-decoration:none;font-weight:800;transition:background .15s,transform .15s}
+.btn:hover{background:var(--amber2);transform:translateY(-2px)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 0 34px;font-size:13.5px;color:var(--ink2)}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+@media(max-width:768px){.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.fgrid{grid-template-columns:1fr}}
+.fgrid h4{color:var(--ink);font-size:13.5px;margin-bottom:14px;letter-spacing:.4px;text-transform:uppercase}
+.fgrid ul{list-style:none}
+.fgrid li{margin-bottom:9px}
+.fgrid a{color:var(--ink2);text-decoration:none;transition:color .15s}
+.fgrid a:hover{color:var(--amber)}
+.fbottom{border-top:1px solid var(--line);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.fbottom a{color:var(--amber);text-decoration:none}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><div class="logo">telefonjour<span>.se</span></div><div class="pill">Jourguiden · juli 2026</div></div></header>
+<header>
+<div class="wrap nav">
+<div class="logo">telefonjour<span>.se</span></div>
+<div class="navlinks">
+<a href="#funkar">Så funkar det</a>
+<a href="#pris">Pris</a>
+<a class="navcta" href="https://menodi.se/?utm_source=telefonjour&utm_medium=satellite&utm_campaign=nav" rel="sponsored">Prova gratis</a>
+</div>
+</div>
+</header>
 
 <div class="wrap">
 <section class="hero">
+<div>
 <div class="kicker">Öppet fast ni har stängt</div>
-<h1>Telefonjour dygnet runt — utan jourpersonal</h1>
-<p>Kunder ringer när problemet uppstår, inte när ni har öppet. Ett stopp i avloppet klockan 23, en inbrottsskada på söndagsmorgonen, en kund som vill omboka innan jobbet. Så här sätter du upp en telefonjour som svarar varje gång — utan att någon behöver sova med telefonen på bröstet.</p>
-<a class="hcta" href="https://menodi.se/?utm_source=telefonjour&utm_medium=satellite&utm_campaign=hero" rel="sponsored">Hör AI-jouren svara — ring demon</a>
+<h1>Telefonjour företag — svar dygnet runt, utan jourpersonal</h1>
+<p class="lead">Telefonjour företag betyder att en vattenläcka klockan 23, en orolig djurägare klockan 03 eller ett stopp i avloppet aldrig längre möts av en telefonsvarare. En AI-receptionist svarar direkt, bedömer ärendet och larmar er bara när det verkligen behövs.</p>
+<div class="ctarow">
+<a class="hcta" href="https://menodi.se/?utm_source=telefonjour&utm_medium=satellite&utm_campaign=hero" rel="sponsored">Hör AI-jouren svara</a>
+<a class="scta" href="#funkar">Se hur det funkar ↓</a>
+</div>
+<div class="chips">
+<div class="chip"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20" stroke-width="2" stroke-linecap="round"/></svg>Fast pris från 795 kr/mån</div>
+<div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="2"/></svg>0 kr startavgift</div>
+<div class="chip"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke-width="2"/></svg>Svarar dygnet runt</div>
+</div>
+</div>
+<div class="heroart reveal">
+<div class="phonebar"><span>Inkommande</span><span>23:04</span></div>
+<div class="sms"><div class="top"><span>SMS-larm</span><span class="badge">AKUT</span></div><p>Vattenläcka anmäld av kund på Storgatan 14. Kopplar samtalet vidare enligt era regler.</p></div>
+<div class="sms"><div class="top"><span>Sammanfattning</span><span>06:45</span></div><p>Bokning bekräftad i kalendern. SMS-bekräftelse skickad till kund.</p></div>
+<div class="sms"><div class="top"><span>Transkript</span><span>12:30</span></div><p>3 samtal besvarade under lunch. Ett meddelande väntar i inkorgen.</p></div>
+</div>
 </section>
-
-<h2>Ett dygn med AI-jour</h2>
-<div class="clock">
-<div class="tc"><div class="t">23:04</div><h3>Akut ärende</h3><p>Fastighetsägare med vattenläcka. AI:n bedömer ärendet som akut enligt dina regler och kopplar direkt till jourhavande — eller skickar SMS-larm.</p></div>
-<div class="tc"><div class="t">06:45</div><h3>Bokning före öppning</h3><p>Kund vill ha en tid samma vecka. AI:n bokar direkt i kalendern och skickar bekräftelse — klart innan ni ens låst upp.</p></div>
-<div class="tc"><div class="t">12:30</div><h3>Lunchrusningen</h3><p>Alla i teamet är upptagna. I stället för kösurr svarar jouren, tar tre bokningar och ett meddelande.</p></div>
-<div class="tc"><div class="t">Lördag</div><h3>Helgförfrågningar</h3><p>Offertförfrågningar och ombokningar tas emot, sammanfattas och ligger sorterade i inkorgen på måndag morgon.</p></div>
 </div>
 
+<div class="band alt">
+<div class="wrap">
+<div class="sectionhead reveal">
+<h2>Vad kostar ett missat samtal efter stängning?</h2>
+</div>
+<div class="problem-grid">
+<div class="pcard reveal"><p>Enligt en studie av 411 Locals besvaras 62 % av samtalen till småföretag aldrig av en människa (85 företag, 58 branscher, 30 dagar). För hantverkare, fastighetsskötare, begravningsbyråer och veterinärer betyder varje missat samtal efter stängning en konkret risk — en vattenläcka som förvärras, ett ärende som inte når fram i tid.</p><p class="src">Källa: 411 Locals-studien.</p></div>
+<div class="pcard reveal"><p>Mönstret syns i bokningstiderna: 52 % av salongsbokningar görs mellan kl 17 och 09 (1000+ salonger), och 56 % av bilhandlares leads kommer efter stängning. Samtidigt uppger 29 % av mäklare att de jobbar 50+ timmar i veckan och 55 % känner hög stress. En telefonjour dygnet runt fångar upp samtalen utan att lägga mer på personalen.</p><p class="src">Källor: Book Salon 2021 · NADA via Better Car People 2024 (USA) · Mäklarsamfundets Branschrapport 2025.</p></div>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+<section class="band">
+<div class="sectionhead reveal">
+<h2>Ett dygn med AI-jour</h2>
+<p class="sub">Så ser ett vanligt dygn ut när telefonjouren aldrig sover.</p>
+</div>
+<div class="clock">
+<div class="tc reveal">
+<div class="icowrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-width="2"/><path d="M12 7v5l3 2" stroke-width="2" stroke-linecap="round"/></svg></div>
+<div class="t">23:04 <span class="akut">AKUT</span></div>
+<h3>Vattenläcka anmäld</h3>
+<p>Fastighetsägare ringer om en läcka. AI:n bedömer ärendet som akut enligt era regler och kopplar direkt vidare — eller skickar ett SMS-larm.</p>
+</div>
+<div class="tc reveal">
+<div class="icowrap"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-width="2" stroke-linecap="round"/></svg></div>
+<div class="t">06:45</div>
+<h3>Bokning före öppning</h3>
+<p>Kund vill ha en tid samma vecka. AI:n bokar direkt i Google Calendar eller Outlook och skickar en SMS-bekräftelse.</p>
+</div>
+<div class="tc reveal">
+<div class="icowrap"><svg viewBox="0 0 24 24"><path d="M14 2l-8 12h6l-2 8 10-13h-7z" stroke-width="2" stroke-linejoin="round"/></svg></div>
+<div class="t">12:30</div>
+<h3>Lunchrusningen</h3>
+<p>Alla i teamet är upptagna. I stället för kösurr svarar jouren, tar tre bokningar och lämnar ett transkript på varje samtal.</p>
+</div>
+<div class="tc reveal">
+<div class="icowrap"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" stroke-width="2"/><path d="M4 9h16M9 4v5" stroke-width="2"/></svg></div>
+<div class="t">Lördag</div>
+<h3>Helgförfrågningar</h3>
+<p>Offertförfrågningar och ombokningar tas emot dygnet runt, sammanfattas och ligger sorterade i inkorgen på måndag morgon.</p>
+</div>
+</div>
+</section>
+</div>
+
+<div class="band alt" id="funkar">
+<div class="wrap">
+<div class="sectionhead reveal">
+<h2>Så funkar det</h2>
+<p class="sub">Från inkommande samtal till bokad tid eller akutlarm — tre steg.</p>
+</div>
+<div class="steps">
+<div class="step reveal"><div class="num">01</div><h3>Samtalet kommer in</h3><p>Kunden ringer ert ordinarie nummer. Utanför öppettid vidarekopplas samtalet till AI-jouren — inkopplat på minuter, utan att numret porteras.</p></div>
+<div class="step reveal"><div class="num">02</div><h3>AI bedömer akut eller rutin</h3><p>AI:n lyssnar, ställer följdfrågor och avgör om ärendet är akut enligt era regler.</p>
+<div class="stepmock">Bedömningslogik i grunden: akut → eskalera, rutin → boka</div>
+<!-- MOCKUP: steg2-dashboard.png 400x300 -->
+</div>
+<div class="step reveal"><div class="num">03</div><h3>Bokar, larmar eller sammanfattar</h3><p>Akuta ärenden larmas eller kopplas vidare direkt. Rutinärenden bokas i kalendern, och varje samtal får ett transkript och en sammanfattning.</p></div>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+<section class="band" id="pris">
+<div class="sectionhead reveal">
 <h2>Bemannad jour vs AI-jour</h2>
 <p class="sub">Typiska nivåer per juli 2026 — uppskattningar, begär alltid offert.</p>
-<div class="vs"><table>
-<tr><th></th><th>Bemannad jour / jourcentral</th><th>AI-telefonjour</th></tr>
-<tr><td><b>Kostnad</b></td><td>Jourtillägg eller avtal, ofta per samtal + nattimme</td><td>Fast månadspris från några hundralappar</td></tr>
-<tr><td><b>Svarstid kl 03</b></td><td>Beror på bemanning</td><td>Första signalen, varje gång</td></tr>
-<tr><td><b>Bokar tider</b></td><td>Sällan</td><td>Ja, direkt i kalendern</td></tr>
-<tr><td><b>Akutlarm</b></td><td>Ja</td><td>Ja — vidarekoppling eller SMS enligt dina regler</td></tr>
-<tr><td><b>Belastning på teamet</b></td><td>Jourschema, störd sömn</td><td>Ingen</td></tr>
+</div>
+<div class="vs reveal"><table>
+<tr><th></th><th>Bemannad jour / jourcentral</th><th class="hl">AI-telefonjour</th></tr>
+<tr><td><b>Kostnad</b></td><td>Jourtillägg eller avtal, ofta per samtal + nattimme</td><td class="hl"><b>Fast pris från 795 kr/mån, 0 kr startavgift</b></td></tr>
+<tr><td><b>Svarstid kl 03</b></td><td>Beror på bemanning</td><td class="hl">Svarar dygnet runt, alla dagar</td></tr>
+<tr><td><b>Samtidiga samtal</b></td><td>Begränsat av bemanning</td><td class="hl">Obegränsat antal samtidigt</td></tr>
+<tr><td><b>Bokar tider</b></td><td>Sällan</td><td class="hl">Ja, direkt i Google Calendar/Outlook + SMS-bekräftelse</td></tr>
+<tr><td><b>Akutlarm</b></td><td>Ja</td><td class="hl">Ja — vidarekoppling eller SMS enligt era regler</td></tr>
+<tr><td><b>Belastning på teamet</b></td><td>Jourschema, störd sömn</td><td class="hl">Ingen</td></tr>
 </table></div>
-<p class="note">Verksamheter med lagkrav på bemannad jour (t.ex. viss vård) ska förstås följa de kraven — AI-jouren är då ett komplement som filtrerar och kopplar.</p>
+<p class="note reveal">Verksamheter med lagkrav på bemannad jour (t.ex. viss vård) ska förstås följa de kraven — AI-jouren är då ett komplement som filtrerar och kopplar.</p>
+</section>
+</div>
 
+<div class="band alt">
+<div class="wrap">
+<div class="sectionhead reveal">
+<h2>Siffror värda att veta</h2>
+</div>
+<div class="stats">
+<div class="stat reveal"><div class="num">11→2 min</div><div class="lbl">Ärendetid, kundtjänst</div><div class="src">Klarnas pressmeddelande, feb 2024 (2,3 M konversationer)</div></div>
+<div class="stat reveal"><div class="num">−25%</div><div class="lbl">Färre återkommande ärenden</div><div class="src">Klarnas pressmeddelande, feb 2024</div></div>
+<div class="stat reveal"><div class="num">62%</div><div class="lbl">Samtal till småföretag som aldrig besvaras av en människa</div><div class="src">411 Locals-studien (85 företag, 58 branscher, 30 dagar)</div></div>
+<div class="stat reveal"><div class="num">52%</div><div class="lbl">Salongsbokningar görs kl 17–09</div><div class="src">Book Salon 2021 (1000+ salonger)</div></div>
+</div>
+</div>
+</div>
+
+<div class="wrap">
+<section class="band">
+<div class="sectionhead reveal">
 <h2>Vem behöver telefonjour?</h2>
-<p class="sub">Hantverkare och fastighetsservice (akuta skador), begravningsbyråer (samtal som inte kan vänta till kontorstid), veterinärer och kliniker (oroliga kunder utanför öppettid), flyttfirmor och verkstäder (kunder som planerar på kvällen). Gemensamt: samtalet är värt mest just när ingen kan svara.</p>
+<p class="sub">Branscher där samtalet är värt mest just när ingen kan svara.</p>
+</div>
+<div class="ind-grid">
+<a class="ind reveal" href="#funkar"><div class="icowrap"><svg viewBox="0 0 24 24"><path d="M14 7l3 3-8 8H6v-3z" stroke-width="2" stroke-linejoin="round"/><path d="M13 8l3-3 3 3-3 3" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Hantverkare</h3><p>Akuta skador som vattenläckor och elfel kan inte vänta till kontorstid.</p></a>
+<a class="ind reveal" href="#funkar"><div class="icowrap"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Begravningsbyrå</h3><p>Dödsfall sker dygnet runt — anhöriga ska mötas av ett svar, även nattetid.</p></a>
+<a class="ind reveal" href="#funkar"><div class="icowrap"><svg viewBox="0 0 24 24"><path d="M4 21c2-6 6-9 8-9s6 3 8 9" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke-width="2"/></svg></div><h3>Veterinär/klinik</h3><p>Oroliga djurägare och akuta ärenden hör av sig utanför öppettid.</p></a>
+<a class="ind reveal" href="#funkar"><div class="icowrap"><svg viewBox="0 0 24 24"><rect x="2" y="10" width="14" height="7" rx="1" stroke-width="2"/><path d="M16 12h4l2 3v2h-6z" stroke-width="2" stroke-linejoin="round"/><circle cx="7" cy="19" r="2" stroke-width="2"/><circle cx="18" cy="19" r="2" stroke-width="2"/></svg></div><h3>Flytt/verkstad</h3><p>Kunder som planerar flytt eller bilservice på kvällen bokas in direkt.</p></a>
+</div>
+</section>
+</div>
 
+<div class="band alt">
+<div class="wrap">
+<div class="sectionhead reveal">
 <h2>Vanliga frågor</h2>
-<details><summary>Vad är en telefonjour?</summary><p>En telefonjour ser till att företagets telefon besvaras utanför ordinarie öppettider. Traditionellt kräver det egen personal eller jourcentral — numera kan en AI-receptionist ta jouren: svara direkt, bedöma ärendet, boka tider och larma dig bara när det behövs.</p></details>
-<details><summary>Vad kostar en telefonjour?</summary><p>Bemannad jour prissätts ofta per samtal och nattimme utöver avtal. En AI-baserad jour kostar vanligen fast månadsavgift från några hundra kronor — och blir inte dyrare för att kunden ringer klockan tre på natten. Uppskattningar per juli 2026.</p></details>
-<details><summary>Kan en AI-jour hantera akuta ärenden?</summary><p>Ja — AI:n avgör om ärendet är akut enligt dina regler och kopplar då vidare till jourhavande eller skickar SMS-larm direkt, medan rutinärenden bokas till nästa dag.</p></details>
+</div>
+<div class="faq">
+<details class="reveal"><summary>Vad är en telefonjour?<span class="chev"></span></summary><p>En telefonjour ser till att företagets telefon besvaras även utanför ordinarie öppettider — kvällar, nätter och helger. Traditionellt bemannas jouren av egen personal eller en jourcentral. Numera kan en AI-receptionist ta jouren: den svarar direkt, bedömer ärendet, bokar tider och larmar dig bara när det verkligen behövs.</p></details>
+<details class="reveal"><summary>Vad kostar en telefonjour?<span class="chev"></span></summary><p>Bemannad jour är dyr — jourtillägg för egen personal eller avtal med jourcentral som ofta prissätts per samtal och nattimme. En AI-baserad telefonjour kostar vanligen en fast månadsavgift från några hundra kronor och blir inte dyrare för att kunden ringer klockan tre på natten. Uppskattningar per juli 2026.</p></details>
+<details class="reveal"><summary>Kan en AI-jour hantera akuta ärenden?<span class="chev"></span></summary><p>Ja, med rätt uppsättning: AI:n svarar, avgör om ärendet är akut enligt dina regler, och kan då koppla samtalet vidare till jourhavande eller skicka SMS-larm direkt — medan rutinärenden bokas till nästa dag.</p></details>
+<details class="reveal"><summary>Hur snabbt kan telefonjouren sättas upp?<span class="chev"></span></summary><p>Telefonjouren kopplas in via vidarekoppling av ert befintliga nummer, aldrig genom att portera det, och är i drift på minuter.</p></details>
+<details class="reveal"><summary>Vad händer om AI:n inte kan hantera ett ärende?<span class="chev"></span></summary><p>AI:n följer era uppsatta regler. Kan den inte hjälpa kunden fullt ut eskalerar den till en människa enligt era anvisningar — via vidarekoppling eller larm.</p></details>
+<details class="reveal"><summary>Vad skiljer telefonjour från en vanlig svarsservice?<span class="chev"></span></summary><p>En svarsservice tar ofta bara emot samtal under avtalad tid och lämnar ett meddelande, till en löpande kostnad på cirka 15–35 kr per samtal plus abonnemang (uppskattning per juli 2026). En AI-baserad telefonjour svarar dygnet runt till fast pris utan kostnad per samtal, bokar i kalendern, skickar SMS-bekräftelse och kan eskalera akuta ärenden direkt — och inga samtal används för att träna AI-modeller.</p></details>
+</div>
+</div>
+</div>
 
-<div class="cta">
-<h2>Testa jouren nu — den har öppet</h2>
-<p>Menodi är en svensk AI-receptionist som tar din telefonjour dygnet runt: svarar, bokar, larmar vid akuta ärenden. Ring demon och testa själv — gärna sent.</p>
+<div class="wrap">
+<section class="band">
+<div class="cta reveal">
+<h2>Telefonjour dygnet runt, fast pris från 795 kr/mån</h2>
+<p>AI-jouren kopplas in på minuter via vidarekoppling av ert befintliga nummer och svarar med en naturlig svensk röst — på svenska och engelska. Ring demon och hör hur den hanterar ett akut ärende.</p>
 <a class="btn" href="https://menodi.se/?utm_source=telefonjour&utm_medium=satellite&utm_campaign=cta" rel="sponsored">Prova gratis</a>
 </div>
+</section>
 </div>
 
-<footer><div class="wrap">© 2026 telefonjour.se — en del av <a href="https://menodi.se" rel="sponsored">Menodi</a>. Generell guide, uppdaterad juli 2026.</div></footer>
+<footer>
+<div class="wrap">
+<div class="fgrid">
+<div>
+<div class="logo" style="margin-bottom:12px">telefonjour<span>.se</span></div>
+<p style="max-width:280px">Guide till telefonjour för företag — AI-receptionist som svarar dygnet runt, bokar och larmar vid akuta ärenden. Uppskattningar och nivåer daterade juli 2026.</p>
+</div>
+<div>
+<h4>Produkt</h4>
+<ul>
+<li><a href="#funkar">Så funkar det</a></li>
+<li><a href="#pris">Pris</a></li>
+</ul>
+</div>
+<div>
+<h4>Branscher</h4>
+<ul>
+<li><a href="#funkar">Hantverkare</a></li>
+<li><a href="#funkar">Begravningsbyrå</a></li>
+<li><a href="#funkar">Veterinär/klinik</a></li>
+<li><a href="#funkar">Flytt/verkstad</a></li>
+</ul>
+</div>
+<div>
+<h4>Om telefonjour</h4>
+<ul>
+<li><a href="#funkar">Vanliga frågor</a></li>
+<li><a href="#pris">Bemannad jour vs AI-jour</a></li>
+</ul>
+</div>
+</div>
+<div class="fbottom">
+<span>© 2026 telefonjour.se — en del av <a href="https://menodi.se/?utm_source=telefonjour&utm_medium=satellite&utm_campaign=footer" rel="sponsored">Menodi</a>.</span>
+<span>Generell guide, uppdaterad juli 2026.</span>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+var els=document.querySelectorAll('.reveal');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+els.forEach(function(e){io.observe(e);});
+})();
+</script>
 </body>
 </html>
