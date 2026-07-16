@@ -23,16 +23,18 @@
 {"@type":"Question","name":"Vad skiljer telefonjour från en vanlig svarsservice?","acceptedAnswer":{"@type":"Answer","text":"En svarsservice tar ofta bara emot samtal under avtalad tid och lämnar ett meddelande, till en löpande kostnad på cirka 15–35 kr per samtal plus abonnemang (uppskattning per juli 2026). En AI-baserad telefonjour svarar dygnet runt till fast pris utan kostnad per samtal, bokar i kalendern, skickar SMS-bekräftelse och kan eskalera akuta ärenden direkt — och inga samtal används för att träna AI-modeller."}}
 ]}
 </script>
+<link rel="preconnect" href="https://menodi.se">
+<link rel="stylesheet" href="https://menodi.se/fonts/fonts.css">
 <style>
 ::selection{background:var(--accent);color:#fff}
 ::selection{background:var(--amber,#f59e0b);color:#131108}
-:root{--bg:#080D18;--bg-gradient:linear-gradient(180deg,#080D18 0%,#0F1A2E 100%);--panel:#111B30;--panel2:#162238;--ink:#EAEDF3;--ink2:#8894AC;--amber:#f59e0b;--amber2:#fbbf24;--accent:#F59E0B;--accent-hover:#FBBF24;--accent-glow:rgba(245,158,11,.15);--line:#1E2D48;--line-bright:#2D4060;--red:#EF4444;--red-soft:rgba(239,68,68,.12);--radius:14px;--radius-lg:18px;--shadow:0 4px 8px rgba(0,0,0,.3),0 16px 40px -12px rgba(0,0,0,.4);--shadow-glow:0 8px 30px rgba(0,0,0,.4),0 0 20px var(--accent-glow)}
+:root{--bg:#080D18;--bg-gradient:linear-gradient(180deg,#080D18 0%,#0F1A2E 100%);--panel:#111B30;--panel2:#162238;--ink:#EAEDF3;--ink2:#8894AC;--amber:#f59e0b;--amber2:#fbbf24;--accent:#F59E0B;--accent-hover:#FBBF24;--accent-glow:rgba(245,158,11,.15);--line:#1E2D48;--line-bright:#2D4060;--red:#EF4444;--red-soft:rgba(239,68,68,.12);--grad-hero:radial-gradient(60% 40% at 20% 30%, rgba(245,158,11,.06) 0%, transparent 60%), radial-gradient(50% 50% at 80% 70%, rgba(245,158,11,.03) 0%, transparent 60%);--radius:14px;--radius-lg:18px;--shadow:0 4px 8px rgba(0,0,0,.3),0 16px 40px -12px rgba(0,0,0,.4);--shadow-glow:0 8px 30px rgba(0,0,0,.4),0 0 20px var(--accent-glow)}
 *{margin:0;padding:0;box-sizing:border-box}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:"Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg-gradient);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative}
-body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");opacity:.7}
+body{font-family:'SF Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg-gradient);color:var(--ink);line-height:1.7;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:-1;opacity:.12;background-image:radial-gradient(circle 1px at 10px 10px, rgba(255,255,255,.03) 1px, transparent 0),radial-gradient(circle 1px at 30px 60px, rgba(245,158,11,.06) 1px, transparent 0);background-size:100px 100px,140px 140px;pointer-events:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 a{color:inherit}
 img,svg{display:block}
@@ -50,7 +52,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,18,32,.72);backdrop-f
 @media(max-width:640px){.navlinks a:not(.navcta){display:none}}
 
 /* hero */
-.hero{padding:90px 0 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero{padding:90px 0 70px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;background:var(--grad-hero)}
 @media(max-width:860px){.hero{grid-template-columns:1fr;padding:60px 0 44px}}
 .kicker{color:var(--amber);font-weight:700;font-size:13.5px;letter-spacing:1.5px;text-transform:uppercase}
 h1{font-size:clamp(34px,5.5vw,56px);line-height:1.08;letter-spacing:-.02em;font-weight:750;margin-top:16px}
@@ -76,7 +78,7 @@ h1{font-size:clamp(34px,5.5vw,56px);line-height:1.08;letter-spacing:-.02em;font-
 /* illustration */
 
 /* sections */
-section{padding:0}
+section{padding:128px 0}
 h2{font-size:clamp(24px,3.2vw,32px);letter-spacing:-.01em;font-weight:700;margin-bottom:12px}
 .sectionhead{max-width:640px;margin-bottom:34px}
 .sub{color:var(--ink2);font-size:16px}
