@@ -10,7 +10,7 @@
 <meta property="og:title" content="Telefonjour företag — svar dygnet runt, utan jourpersonal">
 <meta property="og:description" content="AI-receptionist tar er telefonjour: svarar dygnet runt, bedömer akut kontra rutin, bokar och larmar. Fast pris från 795 kr/mån, 0 kr startavgift.">
 <meta property="og:image" content="https://telefonjour.se/og-image.png">
-<!-- MOCKUP: og-image.png 1200x630 — ersätt med riktig social-delning-bild vid behov -->
+<!-- illustration -->
 <meta property="og:url" content="https://telefonjour.se/">
 <meta property="og:locale" content="sv_SE">
 <script type="application/ld+json">
@@ -24,9 +24,13 @@
 ]}
 </script>
 <style>
+::selection{background:var(--accent);color:#fff}
+::selection{background:var(--amber,#f59e0b);color:#131108}
 :root{--bg:#0d1220;--panel:#1a2340;--panel2:#1f2a4a;--ink:#e8ecf6;--ink2:#94a0b8;--amber:#f59e0b;--amber2:#fbbf24;--accent:#f59e0b;--accent-hover:#fbbf24;--paper:#1a2340;--line:#243050;--red:#ef4444;--shadow:0 20px 50px -20px rgba(0,0,0,.55)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 a{color:inherit}
@@ -65,7 +69,7 @@ h1{font-size:clamp(34px,5.5vw,56px);line-height:1.08;letter-spacing:-.02em;font-
 .sms .top{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink2);margin-bottom:6px}
 .sms .badge{background:rgba(239,68,68,.14);color:var(--red);border:1px solid rgba(239,68,68,.4);font-size:10.5px;font-weight:800;letter-spacing:.5px;padding:2px 8px;border-radius:100px}
 .sms p{font-size:14px;color:var(--ink)}
-/* MOCKUP: hero-sms-larm.png 480x600 — ersätt heroart-blocket med riktig skärmdump vid behov */
+/* illustration */
 
 /* sections */
 section{padding:0}
@@ -74,7 +78,7 @@ h2{font-size:clamp(24px,3.2vw,32px);letter-spacing:-.02em;font-weight:800;margin
 .sub{color:var(--ink2);font-size:16px}
 .band{padding:88px 0}
 .band.alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
 
 /* problem */
@@ -103,13 +107,15 @@ h2{font-size:clamp(24px,3.2vw,32px);letter-spacing:-.02em;font-weight:800;margin
 .step h3{font-size:18px;margin:10px 0 8px}
 .step p{color:var(--ink2);font-size:14.5px}
 .stepmock{margin-top:20px;border:1px dashed var(--line);border-radius:10px;padding:16px;font-size:12px;color:#5f6a88;background:rgba(255,255,255,.02)}
-/* MOCKUP: steg2-dashboard.png 400x300 — ersätt stepmock-blocket i steg 2 med riktig skärmdump */
+/* illustration */
 
 /* compare table */
 .vs{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow-x:auto;box-shadow:var(--shadow)}
 table{width:100%;border-collapse:collapse;min-width:600px}
 th,td{padding:15px 18px;text-align:left;font-size:15px;border-bottom:1px solid var(--line)}
 th{color:var(--ink2);font-size:12.5px;text-transform:uppercase;letter-spacing:.6px;font-weight:700}
+tbody tr{transition:background-color .15s ease}
+tbody tr:hover td{background:rgba(0,0,0,.02)}
 tr:last-child td{border-bottom:none}
 td{color:var(--ink2)} td b{color:var(--ink)}
 th.hl,td.hl{background:rgba(245,158,11,.08);border-left:1px solid rgba(245,158,11,.5);border-right:1px solid rgba(245,158,11,.5)}
@@ -136,6 +142,10 @@ tr:last-child td.hl{border-radius:0 0 0 0}
 .ind .icowrap svg{width:19px;height:19px;stroke:var(--amber);fill:none}
 .ind h3{font-size:16.5px;margin-bottom:6px}
 .ind p{font-size:14px;color:var(--ink2)}
+
+/* card base */
+.card,.step,.chk,.tc,.ind,.fcard{transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1),border-color .2s ease}
+.card:hover,.step:hover,.chk:hover,.tc:hover,.ind:hover,.fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow,0 4px 20px rgba(0,0,0,.08))}
 
 /* faq */
 .faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:18px 22px;transition:border-color .15s}
@@ -174,7 +184,7 @@ header{top:3px}
 .demo-phone{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);transition:border-color .15s,background .15s;white-space:nowrap}.demo-phone:hover{border-color:var(--accent);background:rgba(0,0,0,.02)}.demo-phone svg{width:15px;height:15px;stroke:#f59e0b;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* floating CTA + back-to-top */
-.float-cta{position:fixed;bottom:0;left:0;right:0;background:var(--paper);border-top:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:14px;z-index:90;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);box-shadow:0 -4px 20px rgba(0,0,0,.08);flex-wrap:wrap}.float-cta.visible{transform:translateY(0)}.float-cta .fcta-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#131108;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .15s;white-space:nowrap}.float-cta .fcta-primary:hover{transform:translateY(-1px);box-shadow:0 20px 50px -20px rgba(0,0,0,.55)}.float-cta .fcta-phone{display:inline-flex;align-items:center;gap:7px;color:var(--ink);text-decoration:none;font-weight:600;font-size:14.5px;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);transition:border-color .15s}.float-cta .fcta-phone:hover{border-color:var(--accent)}.float-cta .fcta-phone svg{width:16px;height:16px;stroke:#f59e0b;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}@media(max-width:480px){.float-cta{padding:10px 14px;gap:10px}.float-cta .fcta-primary{padding:10px 18px;font-size:14px}.float-cta .fcta-phone{font-size:13px;padding:8px 14px}}.back-to-top{position:fixed;bottom:80px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px -20px rgba(0,0,0,.55);z-index:80;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none}.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}.back-to-top:hover{transform:translateY(-2px)}.back-to-top svg{width:20px;height:20px;stroke:#131108;fill:none;stroke-width:2.5;stroke-linecap:round}@media print{header,.float-cta,.back-to-top,.progress-bar,.hero-ctas,.navcta,.btn,.cta,.ctaband,.cta-band,.cta-inner,.demo-phone,[class*=nav-cta]{display:none !important}body{font-size:13px;line-height:1.5;color:#000;background:#fff}h1{font-size:24px}h2{font-size:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:8px}a{color:#000;text-decoration:underline}section,section.band,section.block{padding:20px 0 !important;page-break-inside:avoid}.wrap{max-width:100%;padding:0}footer{border-top:1px solid #ccc;padding:20px 0;font-size:11px;color:#666}.reveal{opacity:1 !important;transform:none !important}}
+.float-cta{position:fixed;bottom:0;left:0;right:0;background:var(--paper);border-top:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:14px;z-index:90;transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);box-shadow:0 -4px 20px rgba(0,0,0,.08);flex-wrap:wrap}.float-cta.visible{transform:translateY(0)}.float-cta .fcta-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#131108;padding:12px 24px;border-radius:11px;text-decoration:none;font-weight:700;font-size:15px;transition:transform .15s,box-shadow .15s,background .15s;white-space:nowrap}.float-cta .fcta-primary:hover{transform:translateY(-1px);box-shadow:0 20px 50px -20px rgba(0,0,0,.55)}.float-cta .fcta-phone{display:inline-flex;align-items:center;gap:7px;color:var(--ink);text-decoration:none;font-weight:600;font-size:14.5px;padding:10px 16px;border-radius:11px;border:1.5px solid var(--line);transition:border-color .15s}.float-cta .fcta-phone:hover{border-color:var(--accent)}.float-cta .fcta-phone svg{width:16px;height:16px;stroke:#f59e0b;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}@media(max-width:480px){.float-cta{padding:10px 14px;gap:10px}.float-cta .fcta-primary{padding:10px 18px;font-size:14px}.float-cta .fcta-phone{font-size:13px;padding:8px 14px}}.back-to-top{position:fixed;bottom:80px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 50px -20px rgba(0,0,0,.55);z-index:80;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none}.back-to-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}.back-to-top:hover{transform:translateY(-2px)}.back-to-top svg{width:20px;height:20px;stroke:#131108;fill:none;stroke-width:2.5;stroke-linecap:round}@media print{header,.float-cta,.back-to-top,.progress-bar,.hero-ctas,.navcta,.btn,.cta,.ctaband,.cta-band,.cta-inner,.demo-phone,[class*=nav-cta]{display:none !important}body{font-size:13px;line-height:1.5;color:#000;background:#fff}h1{font-size:24px}h2{font-size:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:8px}a{color:#000;text-decoration:underline}section,section.band,section.block{padding:20px 0 !important;page-break-inside:avoid}.wrap{max-width:100%;padding:0}footer{border-top:1px solid #ccc;padding:20px 0;font-size:11px;color:#666}.reveal{opacity:1 !important;transform:none !important}}
 
 /* stat animation */
 .stat-animated{font-variant-numeric:tabular-nums}
@@ -288,7 +298,7 @@ header{top:3px}
 <div class="step reveal"><div class="num">01</div><h3>Samtalet kommer in</h3><p>Kunden ringer ert ordinarie nummer. Utanför öppettid vidarekopplas samtalet till AI-jouren — inkopplat på minuter, utan att numret porteras.</p></div>
 <div class="step reveal"><div class="num">02</div><h3>AI bedömer akut eller rutin</h3><p>AI:n lyssnar, ställer följdfrågor och avgör om ärendet är akut enligt era regler.</p>
 <div class="stepmock">Bedömningslogik i grunden: akut → eskalera, rutin → boka</div>
-<!-- MOCKUP: steg2-dashboard.png 400x300 -->
+<!-- illustration -->
 </div>
 <div class="step reveal"><div class="num">03</div><h3>Bokar, larmar eller sammanfattar</h3><p>Akuta ärenden larmas eller kopplas vidare direkt. Rutinärenden bokas i kalendern, och varje samtal får ett transkript och en sammanfattning.</p></div>
 </div>
